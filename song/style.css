@@ -1,0 +1,105 @@
+/* Fonts */
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom right, #ffe6f0, #ffe0f0);
+  font-family: 'Quicksand', sans-serif;
+  overflow: hidden;
+}
+
+.background {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 2rem;
+  border-radius: 20px;
+  backdrop-filter: blur(15px);
+  box-shadow: 0 8px 32px rgba(255, 105, 180, 0.2);
+  text-align: center;
+  max-width: 350px;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.5em;
+  color: #ff69b4;
+}
+
+.photo {
+  width: 220px;
+  border-radius: 15px;
+  margin: 1em 0;
+  box-shadow: 0 0 25px rgba(255, 182, 193, 0.7);
+}
+
+#playButton {
+  background-color: #ff69b4;
+  color: white;
+  font-size: 1.1em;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px #ff85c1;
+}
+
+#playButton:hover {
+  background-color: #ff85c1;
+  box-shadow: 0 0 25px #ff85c1;
+  transform: scale(1.05);
+}
+
+.quote {
+  font-family: 'Great Vibes', cursive;
+  font-size: 1.4em;
+  color: #d63384;
+  margin-top: 1.5em;
+}
+
+/* Floating hearts animation */
+.heart-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.heart-container::before {
+  content: "💖💗💓💘💞";
+  font-size: 2rem;
+  position: absolute;
+  animation: floatHearts 10s linear infinite;
+  white-space: nowrap;
+  left: -100%;
+}
+
+@keyframes floatHearts {
+  0% {
+    left: -100%;
+    top: 100%;
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    left: 100%;
+    top: -10%;
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
